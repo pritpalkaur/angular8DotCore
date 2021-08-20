@@ -14,6 +14,7 @@ export class PaymentDetailService {
   list: PaymentDetail[];
 
   postPaymentDetail() {
+    console.log(this.formData);
     return this.http.post(this.baseURL, this.formData);
   }
 
