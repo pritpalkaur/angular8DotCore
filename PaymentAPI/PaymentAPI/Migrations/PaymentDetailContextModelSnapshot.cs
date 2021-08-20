@@ -18,6 +18,30 @@ namespace PaymentAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("PaymentAPI.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Age")
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customer");
+                });
+
             modelBuilder.Entity("PaymentAPI.Models.PaymentDetail", b =>
                 {
                     b.Property<int>("PaymentDetailId")
